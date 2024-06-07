@@ -7,9 +7,12 @@ RUN pacman -Syu --noconfirm base-devel git wget
 WORKDIR /sdw
 
 # 克隆yay的AUR仓库
-RUN git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+RUN git clone https://aur.archlinux.org/yay-bin.git
+RUN cd yay-bin
+RUN makepkg -si
 
-RUN cd ../ && rm -rf yay-bin
+RUN cd ../
+RUN rm -rf yay-bin
 
 RUN yay -S --noconfirm python310
 
