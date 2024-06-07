@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget python3-pip python3 python3-venv
 
 # 创建一个新用户来构建和使用
 RUN useradd -m app \
