@@ -21,7 +21,7 @@ RUN git clone https://aur.archlinux.org/yay-bin.git \
     && cd yay-bin \
     && makepkg -si --noconfirm
 
-
+RUN yay -S --noconfirm python310
 RUN curl -O https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
 RUN sh ./webui.sh
 
