@@ -8,11 +8,11 @@ RUN pacman -Syu --noconfirm base-devel git wget
 # 安装yay
 RUN useradd -ms /bin/bash yay
 USER yay
+WORKDIR /home/yay
 RUN git clone https://aur.archlinux.org/yay-bin.git
 RUN cd yay-bin
 RUN makepkg -si
-RUN cd ../
-RUN rm -rf yay-bin
+RUN userdel yay
 
 # 安装python3.10
 USER root
