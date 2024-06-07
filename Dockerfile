@@ -9,6 +9,7 @@ WORKDIR /sdw
 # 安装yay
 RUN git clone https://aur.archlinux.org/yay-bin.git
 RUN cd yay-bin
+RUN useradd -ms /bin/bash yay
 USER yay
 RUN makepkg -si
 RUN cd ../
