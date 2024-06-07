@@ -10,8 +10,8 @@ RUN useradd -ms /bin/bash yay
 USER yay
 WORKDIR /home/yay
 RUN git clone https://aur.archlinux.org/yay-bin.git
-RUN cd yay-bin
-RUN makepkg -si
+WORKDIR /home/yay/yay-bin
+RUN makepkg -si --noconfirm
 USER root
 RUN userdel -r yay
 
