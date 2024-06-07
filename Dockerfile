@@ -1,9 +1,6 @@
 FROM debian:stable
 
-RUN apt-get update \
-    && apt-get install -y \
-        git \
-        wget \
+RUN apt-get update && apt-get install -y git wget
 
 # 创建一个新用户来构建和使用
 RUN useradd -m app \
