@@ -12,10 +12,10 @@ WORKDIR /home/yay
 RUN git clone https://aur.archlinux.org/yay-bin.git
 RUN cd yay-bin
 RUN makepkg -si
-RUN userdel yay
+USER root
+RUN userdel -r yay
 
 # 安装python3.10
-USER root
 RUN yay -S --noconfirm python310
 
 # 安装sdwebui
