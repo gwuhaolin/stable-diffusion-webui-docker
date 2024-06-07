@@ -10,6 +10,6 @@ USER app
 
 # 在用户家目录中工作
 WORKDIR /home/app
-RUN wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
+RUN curl -O https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
 RUN sh ./webui.sh
 
