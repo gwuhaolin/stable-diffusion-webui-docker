@@ -13,16 +13,7 @@ USER myuser
 WORKDIR /home/myuser
 
 # 克隆yay的AUR仓库
-RUN git clone https://aur.archlinux.org/yay.git
-
-# 进入yay目录
-WORKDIR /home/myuser/yay
-
-# 构建yay包
-RUN makepkg -si --noconfirm
-
-# 清理构建过程产生的临时文件
-RUN rm -rf /home/myuser/yay
+RUN pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
 # 确保yay已经安装并且可以被新用户使用
 RUN yay --version
