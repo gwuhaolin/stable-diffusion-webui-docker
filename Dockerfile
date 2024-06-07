@@ -1,5 +1,7 @@
 FROM ubuntu:22.04
 
+RUN apt-get update && apt-get install -y wget
+
 # 创建一个新用户来构建和使用
 RUN useradd -m app \
     && passwd -d app \
@@ -10,6 +12,6 @@ USER app
 
 # 在用户家目录中工作
 WORKDIR /home/app
-RUN curl -O https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
+RUN wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
 RUN sh ./webui.sh
 
