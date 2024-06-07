@@ -1,7 +1,7 @@
 FROM archlinux:latest
 
 # 更新系统并安装必要的包
-RUN pacman -S --noconfirm base-devel git wget
+RUN pacman -Syu --noconfirm base-devel git wget
 
 # 工作目录
 WORKDIR /sdw
