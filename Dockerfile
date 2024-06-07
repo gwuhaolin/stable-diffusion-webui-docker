@@ -1,6 +1,8 @@
-FROM debian:stable
+FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y git wget
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y python3 python3-pip git wget
 
 # 创建一个新用户来构建和使用
 RUN useradd -m app \
